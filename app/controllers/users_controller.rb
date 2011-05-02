@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   def destroy
       if @current_user.id == params[:id].to_i
         puts "Yes you are in correct condition"
-        flash[:error] = "You cannot delete your own account"
+        flash.now[:error] = "You cannot delete your own account"
         index
         render 'index'
       else
